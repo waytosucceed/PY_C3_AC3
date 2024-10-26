@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Detective -3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffde57;
+            text-align: center;
+            color: #333;
+        }
+        .header {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px 30px;
+            background-color: white;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .header-image {
+            width: 30%;
+            height: auto;
+        }
+        .container {
+            margin: 1rem 1.5rem;
+            padding: 1rem 2.5rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        h1 {
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Merriweather', serif;
+    /* color: #333; */
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #ff5733;
+            margin-bottom: 10px;
+        }
+        ol {
+            font-size: 1.4em;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .highlight {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .footer {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .button {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+    <div class="container">
+        <h1>🐍 Snake Game Challenge 🐍</h1>
+    
+        <div>
+            <p>🎮 This is a very old yet popular game, Snake Game. Have you played this game before?</p>
+            
+            <p>
+                In this game, the green block is your snake 🐍, and the red block represents food 🍎. Your mission is to move the snake around, eat the food, and watch as the snake grows longer with every bite. But there’s a catch! You must avoid hitting the boundaries, or the game will end. 🚫
+            </p>
+    
+            <p><strong>That’s how the game should work... ideally!</strong></p>
+            <img src="./images/image14.gif" alt="">
+    
+            <p>
+                Unfortunately, the code we currently have isn’t doing that. ⚠️ <br> Don’t worry—we’re going to fix it together! We'll break it down into two parts:
+            </p>
+    
+            <h2>🔧 Part 1: Boundary Check</h2>
+           
+            <p>Today, we will ensure the game ends when the snake touches the boundaries.</p>
+            
+            <h3>🖥️ Coordinate System in Pygame:</h3>
+            <p>In Pygame, the coordinate system is a bit different from traditional Cartesian systems:</p>
+            <ul style="font-size: 1.2rem;">
+                <li>📏 The origin <code>(0, 0)</code> is located at the top-left corner of the window.</li>
+                <li>📐 <strong>X-axis:</strong> The x-coordinate increases as you move from left to right.</li>
+                <li>📉 <strong>Y-axis:</strong> The y-coordinate increases as you move from top to bottom.</li>
+            </ul>
+    
+            <p>🔍 Although there are many new commands in this code that you haven’t learned yet, don't worry—you’ll learn them as we progress! 
+            For now, here’s a quick look at the key variables in the code:</p>
+            
+            <ul style="font-size: 1.2rem;">
+                <li>🐍 <code>snake_x</code>: The x-coordinate of the snake.</li>
+                <li>🐍 <code>snake_y</code>: The y-coordinate of the snake.</li>
+                <li>🖥️ <code>SCREEN_WIDTH</code>: Width of the game screen.</li>
+                <li>🖥️ <code>SCREEN_HEIGHT</code>: Height of the game screen.</li>
+                <li>🏃‍♂️ <code>running</code>: This variable holds the game status—if the game is running, it will be <code>True</code>; otherwise, <code>False</code>.</li>
+            </ul>
+    
+    
+            <h3>👩‍💻 Follow the instruction below:</h3>
+            <p>Step 1:💻 Open the code in Visual Studio Code. <br> Step 2 : To install Pygame, enter the following command in the terminal:</p>
+            <code style="font-size: 1.2rem;">pip install pygame</code> 
+            <p>or</p>
+            <code style="font-size: 1.2rem;">pip3 install pygame</code>
+    
+            <p>🔎 The code is designed to end the game if the snake goes out of bounds🏁. But there are some errors to fix! You need to identify and correct them:</p>
+    <img src="./images/image14.png" alt="">
+            <!-- <h3>📝 Solution:</h3> -->
+            <!-- <p>Make sure that the game ends when the snake crosses the boundaries. </p> -->
+    <br>
+    <h2>🔧 Part 2: Increase the Snake’s Length!</h2>
+    <p> In the next class, we will implement the feature of increasing snake length when it touches food.</p>
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- <h1>🕵️ Code Detective 🕵️</h1> -->
+        <h2>Instructions</h2>
+        <ol>
+            <li>Go to the GitHub repository 👉 
+                <a href="https://github.com/WayToSucceed-Coding/SnakeGamePart-1-Student-Activity.git" target="_blank" class="button">Click Here to Open</a>
+            </li>
+                        <li>Click the green "Code" button located near the top right corner of the repository.</li>
+            <li>In the dropdown menu that appears, click on "Download ZIP." This will download the entire repository as a ZIP file to your computer.</li>
+            <li>Once downloaded, locate the ZIP file in your Downloads folder (or the folder where your downloads are saved).</li>
+            <li>Right-click the ZIP file and select "Extract All…".</li>
+            <li>You can now open the extracted code in your code editor (VS Code).</li>
+            <li>Happy Debugging!🐞</li>
+        </ol>
+    </div>
+</body>
+</html>
